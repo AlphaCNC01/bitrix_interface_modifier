@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Bitrix24: перенос выбранных пунктов меню в футер
 // @namespace    http://tampermonkey.net/
-// @version      0.1
+// @version      0.1.001
 // @description  Переносит указанные пункты левого меню в футер, фиксирует футер и делает его прозрачным
 // @author       AlphaCNC01
 // @match        *://*.bitrix24.com/*
@@ -24,6 +24,8 @@
 // @match        *://*.bitrix24.com.br/*
 // @grant        none
 // @run-at       document-idle
+// @downloadURL  https://github.com/AlphaCNC01/bitrix_interface_modifier/raw/refs/heads/main/bitrix_interface_modifier.user.js
+// @updateURL    https://github.com/AlphaCNC01/bitrix_interface_modifier/raw/refs/heads/main/bitrix_interface_modifier.user.js
 // ==/UserScript==
 
 (function() {
@@ -95,8 +97,12 @@
                 bottom: 0 !important;
                 width: 100% !important;
                 z-index: 1000 !important;
-                background: transparent !important;
-                box-shadow: 0 -2px 10px rgba(0,0,0,0.05) !important;
+                /* Затемнённый фон: чёрный с прозрачностью 0.7 */
+                background: rgba(0, 0, 0, 0.7) !important;
+                /* Лёгкая тень сверху */
+                box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.3) !important;
+                /* Цвет текста лучше сделать белым или светлым для контраста */
+                color: #fff !important;
             }
             footer.app__footer .air-footer {
                 background: transparent !important;
@@ -140,3 +146,4 @@
     }
 
 })();
+
