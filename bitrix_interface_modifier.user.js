@@ -3,7 +3,7 @@
 // @namespace    http://tampermonkey.net/
 // @version      0.1
 // @description  Переносит указанные пункты левого меню в футер, фиксирует футер и делает его прозрачным
-// @author       Ваше имя
+// @author       AlphaCNC01
 // @match        *://*.bitrix24.com/*
 // @match        *://*.bitrix24.ru/*
 // @match        *://*.bitrix24.by/*
@@ -138,4 +138,5 @@
     } else {
         init();
     }
+
 })();
